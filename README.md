@@ -1,4 +1,4 @@
-# log4j2-banter
+# log4j2-prosecutor
 
 ## Motivation
 <p>This fundamental vulnerability was reported by [CVE-2018-3149](https://nvd.nist.gov/vuln/detail/CVE-2018-3149) and patched by [this article. (8u121 Release Notes)](https://www.oracle.com/java/technologies/javase/8u121-relnotes.html)</p>
@@ -13,8 +13,8 @@ cd http-server && npm install && cd ../ldap-server && npm install
 ```
 1. run `http-server` and `ldap-server` both
 ```
-cd http-server && node index.js 2>&1 &
-cd ldap-server && node index.js 2>&1 &
+cd http-server && node index.js &
+cd ldap-server && node index.js
 ```
 2. Compile Main.java
 ```bash

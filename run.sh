@@ -1,4 +1,4 @@
 #!/bin/bash
-cd http-server && node index.js 2>&1 &
+cd http-server && node index.js &
 sleep 2
-cd ldap-server && node index.js 2>&1 & 
+cd ldap-server && node index.js 
