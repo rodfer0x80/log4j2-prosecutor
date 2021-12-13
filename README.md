@@ -9,13 +9,15 @@
 ## Running
 0. Install requirements
 ```
-system requirements => requirements.txt (gradle is not per say required, use any building tool with same output)
-npm requirements => npm-requirements.txt
+# system requirements => requirements.txt (gradle is not per say required, use any building tool with same output)
+# npm requirements => npm-requirements.txt
 $ cd http-server && npm install && cd ../ldap-server && npm install
 ```
 1. run `http-server` and `ldap-server` both
 ```
-$ DATE=17-14-57_13-12-2021 && cd http-server && node index.js 2>&1 >$DATE_http-server.log & && cd ldap-server && node index.js 2>&1 >$DATE_ldap-server.log &
+$ DATE=$(date +%H-%M-%S_%d-%m-%Y) &&\
+	   cd http-server && node index.js 2>&1 >$DATE_http-server.log & &&\
+	   cd ldap-server && node index.js 2>&1 >$DATE_ldap-server.log &
 ```
 2. Compile Main.java
 ```bash
