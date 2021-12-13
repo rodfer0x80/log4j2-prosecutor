@@ -1,5 +1,0 @@
-node-js
-npm
-gradle
-java
-javac

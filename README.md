@@ -9,8 +9,6 @@
 ## Running
 0. Install requirements
 ```
-# system requirements => requirements.txt (gradle is not per say required, use any building tool with same output)
-# npm requirements => npm-requirements.txt
 cd http-server && npm install && cd ../ldap-server && npm install
 ```
 1. run `http-server` and `ldap-server` both
@@ -46,6 +44,13 @@ NODEP=`pgrep node`
 for id in $NODEP; do
     kill $id
 done
+```
+
+## Scripts
+```
+# Single target pwn
+# Edit exploit-configs.txt with url and params
+cd scripts/single-pwn && python3 __main__.py
 ```
 
 ## References
