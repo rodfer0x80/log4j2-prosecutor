@@ -4,3 +4,4 @@ log4j-client/.idea
 log4j-client/.gradle
 log4j-client/build
 *.class
+__pycache__/
