@@ -1,11 +1,11 @@
 # log4j2-banter
 
 ## Motivation
-https://user-images.githubusercontent.com/37479424/145661983-131eb84a-9ac5-4014-9f6b-10b69d8d7cf4.mp4
-This fundamental vulnerability was reported by [CVE-2018-3149](https://nvd.nist.gov/vuln/detail/CVE-2018-3149) and patched by [this article. (8u121 Release Notes)](https://www.oracle.com/java/technologies/javase/8u121-relnotes.html)
-However, the logging library for java called log4j2 had [JNDILookup](https://github.com/apache/logging-log4j2/blob/20f9a97dbe5928c3b5077bcdd2a22ac92e941655/log4j-core/src/main/java/org/apache/logging/log4j/core/lookup/JndiLookup.java), which allowed access to protocols such as LDAP, which allowed code injection in older java versions.
-Patched versions of java can prevent code injection, but `JNDILookup` makes request to ldap server, which can lead to IP leaks.
-The solution is to update **Java** and **log4j2** versions.
+<p>https://user-images.githubusercontent.com/37479424/145661983-131eb84a-9ac5-4014-9f6b-10b69d8d7cf4.mp4</p>
+<p>This fundamental vulnerability was reported by [CVE-2018-3149](https://nvd.nist.gov/vuln/detail/CVE-2018-3149) and patched by [this article. (8u121 Release Notes)](https://www.oracle.com/java/technologies/javase/8u121-relnotes.html)</p>
+<p>However, the logging library for java called log4j2 had [JNDILookup](https://github.com/apache/logging-log4j2/blob/20f9a97dbe5928c3b5077bcdd2a22ac92e941655/log4j-core/src/main/java/org/apache/logging/log4j/core/lookup/JndiLookup.java), which allowed access to protocols such as LDAP, which allowed code injection in older java versions.</p>
+<p>Patched versions of java can prevent code injection, but `JNDILookup` makes request to ldap server, which can lead to IP leaks.</p>
+<p>The solution is to update **Java** and **log4j2** versions.</p>
 
 ## Running
 0. Install requirements
