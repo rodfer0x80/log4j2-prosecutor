@@ -5,7 +5,7 @@
 <p>However, the logging library for java called log4j2 had (JNDILookup)[CVE-2021-44228](https://github.com/apache/logging-log4j2/blob/20f9a97dbe5928c3b5077bcdd2a22ac92e941655/log4j-core/src/main/java/org/apache/logging/log4j/core/lookup/JndiLookup.java), which allowed access to protocols such as LDAP, which allowed code injection in older java versions.</p>
 <p>Patched versions of java can prevent code injection, but `JNDILookup` makes request to ldap server, which can lead to IP leaks.</p>
 <p>The solution is to update **Java** and **log4j2** versions.</p>
-
+<p> Add: https://www.blumira.com/analysis-log4shell-local-trigger/ </p>
 ## Running
 0. Install requirements
 ```
